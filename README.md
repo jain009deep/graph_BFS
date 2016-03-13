@@ -21,9 +21,7 @@ APIs
 		"Content-type"" : "application/json"
 	}
 	Request Body:
-	{
-		hostName : "A"
-	}
+	{"hostName":"A"}
 	
 2) /hosts:
 
@@ -55,9 +53,13 @@ APIs
 Steps to get Started 
 ========================================================================================
 1) Download this repo.
+
 2) cd into this folder on your system terminal.
+
 3) run "npm install"
-4) Server starts on port 3000 by defulat. To use any of above api, append it to "http://localhost:3000".  e.g. "http://localhost:3000/host". 
+
+4) Server starts on port 3000 by defulat. To use any of above api, append it to "http://localhost:3000".  e.g. "http://localhost:3000/host".
+ 
 5) Use any REST client to verify implementation. Please pass parameters as mentioned above.
 
 
