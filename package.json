@@ -1,0 +1,22 @@
+{
+  "name": "fileDeliveryAPI",
+  "version": "1.0.0",
+  "description": "This application implements some sample REST APIs. It uses graph data structure and BFS (Breadth First Search) algorithm to solve problem statement.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Navdeep Jain <navdeep.n.jain@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cron": "^1.0.9",
+    "express": "^4.13.3",
+    "winston": "^1.0.2"
+  }
+}
