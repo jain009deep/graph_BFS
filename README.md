@@ -48,7 +48,37 @@ APIs
 	This API returns the shortest path between srcHost and destHost. Response contains object with following properties:
 	1) dataArr : Array containing all the hosts from srcHost to destHost in sequence. If no path exists between srcHost and destHost, this array is empty.
 	2) overview : String containing route (destHost <--connectionMethod-- ...hosts ... --srcHost). If no path exists between srcHost and destHost, this string contains a suitable message.
+	Here is sample response:
 	
+	a) if path exists:
+	{
+		"hasError": false,
+		"data": {
+			"dataArr": [
+				"A",
+				"D",
+				"G",
+				"I",
+				"J",
+				"L",
+				"N",
+				"R"
+			],
+	
+			"overview": "R<--ftp--N<--rsync--L<--ftp--J<--ftp--I<--ftp--G<--ftp--D<--ftp--A"
+	
+		}
+	}
+	
+	b) if path doesn't exist:
+	
+	{
+		"hasError": false,
+		"data": {
+			"dataArr": [],
+			"overview": "No Path exists between F and S"
+	}
+}
 	
 Steps to get Started 
 ========================================================================================
