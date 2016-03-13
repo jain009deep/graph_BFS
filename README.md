@@ -86,11 +86,13 @@ Steps to get Started
 
 2) cd into this folder on your system terminal.
 
-3) run "npm install"
+3) Run command "npm install"
 
-4) Server starts on port 3000 by defulat. To use any of above api, append it to "http://localhost:3000".  e.g. "http://localhost:3000/host".
+4) Run command "node server.js"
+
+5) Server starts on port 3000 by defulat. To use any of above api, append it to "http://localhost:3000".  e.g. "http://localhost:3000/host".
  
-5) Use any REST client to verify implementation. Please pass parameters as mentioned above.
+6) Use any REST client to verify implementation. Please pass parameters as mentioned above.
 
 
 
