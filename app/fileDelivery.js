@@ -175,7 +175,7 @@ function getPath(req, res){
       },
       result;
    
-   if(!srcHost || !destHost){
+   if(!srcHost || !destHost || (hosts.indexOf(srcHost) === -1) || (hosts.indexOf(destHost) === -1)){
      responseObj.hasError = true;
 	   responseObj.errMsg = "Invalid input";
      res.json(responseObj);
