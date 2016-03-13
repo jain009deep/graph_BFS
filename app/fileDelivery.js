@@ -94,7 +94,7 @@ function findPath(srcHost, destHost){
 
 function addHost(req, res){
 
-  var hostName = req.body.hostName.toUpperCase(),
+  var hostName = req.body.hostName,
       responseObj = {
         hasError: false
       };
@@ -105,7 +105,7 @@ function addHost(req, res){
     res.json(responseObj);
     return;      
   }
-  
+  hostName = hostName.toUpperCase();
   if(hosts.indexOf(hostName) === -1){
 	  hosts.push(hostName);
 	  responseObj.data = "Host added scucessfully";
@@ -127,8 +127,8 @@ function getHosts(req, res){
 }
 
 function addLink(req, res){
-  var srcHost = req.body.srcHost.toUpperCase(),
-      destHost = req.body.destHost.toUpperCase(),
+  var srcHost = req.body.srcHost,
+      destHost = req.body.destHost,
       description = req.body.description,
       responseObj = {
         hasError: false
@@ -141,6 +141,9 @@ function addLink(req, res){
      res.json(responseObj);
      return;
    }
+   
+   srcHost = srcHost.toUpperCase()
+   destHost = destHost.toUpperCase();
    
    linkObj.srcHost = srcHost;
    linkObj.destHost = destHost;
@@ -168,21 +171,21 @@ function getLinks(req, res){
 }
 
 function getPath(req, res){
-  var srcHost = req.params.srcHost.toUpperCase(),
-      destHost = req.params.destHost.toUpperCase(),
+  var srcHost = req.params.srcHost,
+      destHost = req.params.destHost,
       responseObj = {
         hasError: false
       },
       result;
    
-   if(!srcHost || !destHost || (hosts.indexOf(srcHost) === -1) || (hosts.indexOf(destHost) === -1)){
+   if(!srcHost || !destHost || (hosts.indexOf(srcHost.toUpperCase()) === -1) || (hosts.indexOf(destHost.toUpperCase()) === -1)){
      responseObj.hasError = true;
 	   responseObj.errMsg = "Invalid input";
      res.json(responseObj);
      return;
    }
       
-  result = findPath(srcHost, destHost);
+  result = findPath(srcHost.toUpperCase(), destHost.toUpperCase());
   responseObj.data = result;
   res.json(responseObj);   
    
